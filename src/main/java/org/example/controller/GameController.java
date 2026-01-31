@@ -67,8 +67,11 @@ public class GameController
     {
         String[] parts = input.split( " " );
         String first = parts[0];
-        String second = parts[1];
-
+        String second = "";
+        if (parts.length > 1 )
+        {
+            second = parts[1];
+        }
         String direction = null;
 
         // this is the messiest part of the code
@@ -79,7 +82,6 @@ public class GameController
         }
         else if ( isMovementPrefix( first ) )
         {
-
             if ( isDirection( second ) )
             {
                direction = mapShortToLong( second );
