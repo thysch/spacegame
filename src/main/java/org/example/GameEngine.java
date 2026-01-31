@@ -1,6 +1,6 @@
 //-----------------------------------------------------------------------------------
 //
-// PURPOSE: Singleton game engine to control game loop
+// Purpose: Singleton game engine to control game loop
 //
 //-----------------------------------------------------------------------------------
 package org.example;
