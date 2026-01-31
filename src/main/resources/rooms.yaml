@@ -1,0 +1,17 @@
+start:
+  desc: You are in a dark room.
+  exits:
+    north: hall
+  item: lamp
+
+hall:
+  desc: A long hallway with flickering torches.
+  exits:
+    south: start
+    east: treasure
+  item: key
+
+treasure:
+  desc: You found the ancient treasure! Congratulations!
+  exits: {}
+  item: null
