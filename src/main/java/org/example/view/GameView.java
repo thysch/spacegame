@@ -14,7 +14,8 @@ public class GameView
     //-----------------------------------------------------------------------------
     // Purpose: Game welcome message
     //-----------------------------------------------------------------------------
-    public void showWelcome() {
+    public void showWelcome() 
+    {
         System.out.println( "Welcome to game!!" );
     }
 
