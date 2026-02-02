@@ -11,16 +11,17 @@ import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 import org.yaml.snakeyaml.Yaml;
+import org.example.model.Player;
 
 public class GameModel
 {
-    private String currentRoom;
+    private final Player player;
     private final Map<String, Room> rooms = new HashMap<>();
-    private final Set<String> inventory = new HashSet<>();
     private boolean victory = false;
 
     public GameModel()
     {
+        this.player = new Player("start");
         loadFromYaml();
         //System.out.println( "loaded yaml" );
     }
@@ -33,13 +34,15 @@ public class GameModel
     {
         //System.out.println( "Moving " + direction );
 
-        Room room = rooms.get( currentRoom );
+        Room room = rooms.get(player.getCurrentRoom());
         if ( room == null || !room.exits.containsKey( direction ) ) return false;
 
-        currentRoom = room.exits.get( direction );
-        Room newRoom = rooms.get( currentRoom );
+        String next = room.exits.get(direction);
+        player.setCurrentRoom(next);
+        Room newRoom = rooms.get(player.getCurrentRoom()); //
+        System.out.println("DEBUG: Player is now in room: " + player.getCurrentRoom());
 
-        if ( "treasure".equals( currentRoom ) )
+        if ( "treasure".equals( player.getCurrentRoom() ) )
         {
             victory = true;
         }
@@ -52,7 +55,7 @@ public class GameModel
     //-----------------------------------------------------------------------------
     public boolean takeItem( String itemName )
     {
-        Room room = rooms.get( currentRoom );
+        Room room = rooms.get( this.player.getCurrentRoom() );
         //System.out.println("[DEBUG] Current room ID: " + room);
 
         if ( room == null )
@@ -67,7 +70,7 @@ public class GameModel
             //System.out.println("[DEBUG] Item NOT found → returning false");
             return false;
         }
-        inventory.add( item );
+        player.addItem(item);
         //System.out.println("[DEBUG] Success: added '" + item + "' to inventory");
         return true;
     }
@@ -78,14 +81,17 @@ public class GameModel
     //-----------------------------------------------------------------------------
     public String getCurrentRoomDescription()
     {
-        Room r = rooms.get( currentRoom );
+        Room r = rooms.get( this.player.getCurrentRoom() );
         if ( r == null ) return "Error: no room!";
 
         StringBuilder sb = new StringBuilder();
         sb.append( r.description ).append( "\n" );
         sb.append( "Exits: " ).append( String.join(", ", r.exits.keySet() ) ).append( "\n" );
         sb.append( "Items: ").append( r.getItemsDescription() ).append( "\n" );
-        sb.append( "Inventory: " ).append( inventory.isEmpty() ? "empty" : String.join(", ", inventory ) );
+        Set<String> inv = player.getInventory();
+        sb.append("Inventory: ").append(inv.isEmpty() ? "empty" : String.join(", ", inv));
+
+
         return sb.toString();
     }
 
@@ -122,7 +128,7 @@ public class GameModel
 
                 rooms.put( id, room );
             }
-            currentRoom = "start";  // or could read from yaml
+           // player.setCurrentRoom("start");  // or could read from yaml
         }
         catch ( Exception e )
         {
