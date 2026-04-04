@@ -4,11 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8cef9db3-40f8-48c7-9eec-bd6f07d72352" name="Changes" comment="demo text game">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/model/GameModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/model/GameModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/rooms.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/rooms.yaml" afterDir="false" />
-    </list>
+    <list default="true" id="8cef9db3-40f8-48c7-9eec-bd6f07d72352" name="Changes" comment="demo text game" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -58,7 +54,7 @@
     "RunOnceActivity.git.unshallow": "true",
     "RunOnceActivity.typescript.service.memoryLimit.init": "true",
     "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "ryan",
     "ignore.virus.scanning.warn.message": "true",
     "junie.onboarding.icon.badge.shown": "true",
     "kotlin-language-version-configured": "true",
@@ -103,7 +99,7 @@
       <workItem from="1769852490742" duration="14584000" />
       <workItem from="1775261904410" duration="780000" />
       <workItem from="1775262708740" duration="70000" />
-      <workItem from="1775262971824" duration="1411000" />
+      <workItem from="1775262971824" duration="1796000" />
     </task>
     <task id="LOCAL-00001" summary="demo text game">
       <option name="closed" value="true" />

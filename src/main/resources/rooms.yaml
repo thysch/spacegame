@@ -23,8 +23,8 @@ Room 3: # Outside Portal Building East Side
 Room 4: # Outside Portal Building South Side
   desc: You are outside the southern portal building.
   exits:
-    north: Room 3
     west: Room 5
+    east: Room 3
   item: null
 
 Room 5: # Outside Portal Building West Side
@@ -44,13 +44,13 @@ Room 6: # Route to Colony Walls
   item: null
 
 Room 7: # Off Route West
-  desc: You are off the route to the colony walls.
+  desc: You are off the west route to the colony walls.
   exits:
     east: Room 6
   item: null
 
 Room 8: # Off Route East
-  desc: You are off the route to the colony walls.
+  desc: You are off the east route to the colony walls.
   exits:
     west: Room 6
   item: null
