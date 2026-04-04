@@ -16,7 +16,7 @@ Room 2: # Outside Portal Building North Side
 Room 3: # Outside Portal Building East Side
   desc: You are outside the eastern portal building.
   exits:
-    west: Room 2
+    north: Room 2
     south: Room 4
   item: null
 
@@ -37,8 +37,8 @@ Room 5: # Outside Portal Building West Side
 Room 6: # Route to Colony Walls
   desc: You are on a route to the colony walls.
   exits:
-    east: Room 8
-    west: Room 7
+    east: Room 7
+    west: Room 8
     south: Room 2
     north: Room 9
   item: null
@@ -46,13 +46,13 @@ Room 6: # Route to Colony Walls
 Room 7: # Off Route West
   desc: You are off the west route to the colony walls.
   exits:
-    east: Room 6
+    west: Room 6
   item: null
 
 Room 8: # Off Route East
   desc: You are off the east route to the colony walls.
   exits:
-    west: Room 6
+    east: Room 6
   item: null
 
 Room 9: # Boss room
