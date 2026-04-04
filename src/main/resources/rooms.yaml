@@ -1,17 +1,61 @@
-start:
+Room 1: # Inside Portal Building Ruins
   desc: You are in a dark room.
   exits:
-    north: hall
+    north: Room 2
   item: lamp
 
-hall:
-  desc: A long hallway with flickering torches.
+Room 2: # Outside Portal Building North Side
+  desc: You are outside the northern portal building.
   exits:
-    south: start
-    east: treasure
+    south: Room 1
+    west: Room 5
+    east: Room 3
+    north: Room 6
   item: key
 
-treasure:
-  desc: You found the ancient treasure! Congratulations!
+Room 3: # Outside Portal Building East Side
+  desc: You are outside the eastern portal building.
+  exits:
+    west: Room 2
+    south: Room 4
+  item: null
+
+Room 4: # Outside Portal Building South Side
+  desc: You are outside the southern portal building.
+  exits:
+    north: Room 3
+    west: Room 5
+  item: null
+
+Room 5: # Outside Portal Building West Side
+  desc: You are outside the western portal building.
+  exits:
+    north: Room 2
+    south: Room 4
+  item: null
+
+Room 6: # Route to Colony Walls
+  desc: You are on a route to the colony walls.
+  exits:
+    east: Room 8
+    west: Room 7
+    south: Room 2
+    north: Room 9
+  item: null
+
+Room 7: # Off Route West
+  desc: You are off the route to the colony walls.
+  exits:
+    east: Room 6
+  item: null
+
+Room 8: # Off Route East
+  desc: You are off the route to the colony walls.
+  exits:
+    west: Room 6
+  item: null
+
+Room 9: # Boss room
+  desc: You found the boss! Congratulations!
   exits: {}
   item: null

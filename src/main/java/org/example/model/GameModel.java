@@ -21,7 +21,7 @@ public class GameModel
 
     public GameModel()
     {
-        this.player = new Player("start");
+        this.player = new Player("Room 1");
         loadFromYaml();
         //System.out.println( "loaded yaml" );
     }
@@ -42,7 +42,7 @@ public class GameModel
         Room newRoom = rooms.get(player.getCurrentRoom()); //
         System.out.println("DEBUG: Player is now in room: " + player.getCurrentRoom());
 
-        if ( "treasure".equals( player.getCurrentRoom() ) )
+        if ( "Room 9".equals( player.getCurrentRoom() ) )
         {
             victory = true;
         }
@@ -113,12 +113,12 @@ public class GameModel
 
                 Room room = new Room();
                 room.description = ( String ) props.get( "desc" );
-                room.exits = ( Map<String, String> ) props.get( "exits" );
+                room.exits = ( Map<String, String> ) props.getOrDefault( "exits", new HashMap<>());
 
                 String item = ( String ) props.get( "item" );
 
                 // this part is really important apparently
-                if ( item != null )
+                if ( item != null && !item.equalsIgnoreCase("null") && !item.isBlank())
                 {
                     String cleanItemName = item.toLowerCase().trim();
                     room.addItem( cleanItemName, "a " + cleanItemName );
