@@ -12,6 +12,7 @@ import java.util.Stack;
 public class CommandInvoker
 {
     private final Stack<GameCommand> history = new Stack<>();
+    private static final int MAX_UNDO = 3; // max number of undo commands
 
     //-----------------------------------------------------------------------------
     // Purpose: Run a game command
@@ -24,6 +25,10 @@ public class CommandInvoker
             //System.out.println("tried command");
             command.execute();
             history.push( command );
+            if (history.size() > MAX_UNDO)
+            {
+                history.removeFirst();
+            }
         }
         catch( Exception e )
         {
@@ -38,7 +43,8 @@ public class CommandInvoker
     {
         if ( !history.isEmpty() )
         {
-            history.pop();
+            GameCommand command = history.pop();
+            command.undo();
         }
         else
         {

@@ -8,4 +8,5 @@ package org.example.commands;
 public interface GameCommand
 {
     void execute();
+    void undo();
 }

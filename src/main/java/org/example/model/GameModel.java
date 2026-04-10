@@ -96,6 +96,20 @@ public class GameModel
     }
 
     //-----------------------------------------------------------------------------
+    // Purpose: Lists exits, items, inventory in current room
+    //          could prob split this up, at least the inventory part
+    //-----------------------------------------------------------------------------
+    public String getCurrentRoomId()
+    {
+        return player.getCurrentRoom();
+    }
+
+    public void setCurrentRoom(String roomId)
+    {
+        player.setCurrentRoom(roomId);
+    }
+
+    //-----------------------------------------------------------------------------
     // Purpose: Load the rooms.yaml file
     //-----------------------------------------------------------------------------
     private void loadFromYaml()

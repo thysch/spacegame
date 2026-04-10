@@ -1,0 +1,66 @@
+warning: in the working copy of '.idea/workspace.xml', LF will be replaced by CRLF the next time Git touches it
+[1mdiff --git a/.idea/workspace.xml b/.idea/workspace.xml[m
+[1mindex 4b37751..b084f1c 100644[m
+[1m--- a/.idea/workspace.xml[m
+[1m+++ b/.idea/workspace.xml[m
+[36m@@ -4,10 +4,7 @@[m
+     <option name="autoReloadType" value="SELECTIVE" />[m
+   </component>[m
+   <component name="ChangeListManager">[m
+[31m-    <list default="true" id="8cef9db3-40f8-48c7-9eec-bd6f07d72352" name="Changes" comment="demo text game">[m
+[31m-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />[m
+[31m-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/controller/GameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/controller/GameController.java" afterDir="false" />[m
+[31m-    </list>[m
+[32m+[m[32m    <list default="true" id="8cef9db3-40f8-48c7-9eec-bd6f07d72352" name="Changes" comment="demo text game" />[m
+     <option name="SHOW_DIALOG" value="false" />[m
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />[m
+     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />[m
+[36m@@ -24,21 +21,21 @@[m
+   <component name="Git.Settings">[m
+     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />[m
+   </component>[m
+[31m-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{[m
+[31m-  "lastFilter": {[m
+[31m-    "state": "OPEN",[m
+[31m-    "assignee": "thysch"[m
+[32m+[m[32m  <component name="GitHubPullRequestSearchHistory">{[m
+[32m+[m[32m  &quot;lastFilter&quot;: {[m
+[32m+[m[32m    &quot;state&quot;: &quot;OPEN&quot;,[m
+[32m+[m[32m    &quot;assignee&quot;: &quot;thysch&quot;[m
+   }[m
+[31m-}]]></component>[m
+[31m-  <component name="GithubPullRequestsUISettings"><![CDATA[{[m
+[31m-  "selectedUrlAndAccountId": {[m
+[31m-    "url": "https://github.com/thysch/spacegame.git",[m
+[31m-    "accountId": "381c31d7-5078-434b-8dbd-115f8373e6e4"[m
+[32m+[m[32m}</component>[m
+[32m+[m[32m  <component name="GithubPullRequestsUISettings">{[m
+[32m+[m[32m  &quot;selectedUrlAndAccountId&quot;: {[m
+[32m+[m[32m    &quot;url&quot;: &quot;https://github.com/thysch/spacegame.git&quot;,[m
+[32m+[m[32m    &quot;accountId&quot;: &quot;381c31d7-5078-434b-8dbd-115f8373e6e4&quot;[m
+   }[m
+[31m-}]]></component>[m
+[31m-  <component name="ProjectColorInfo"><![CDATA[{[m
+[31m-  "associatedIndex": 4[m
+[31m-}]]></component>[m
+[32m+[m[32m}</component>[m
+[32m+[m[32m  <component name="ProjectColorInfo">{[m
+[32m+[m[32m  &quot;associatedIndex&quot;: 4[m
+[32m+[m[32m}</component>[m
+   <component name="ProjectId" id="39190oclfRDxqQCvoAslziipawT" />[m
+   <component name="ProjectViewState">[m
+     <option name="hideEmptyMiddlePackages" value="true" />[m
+[36m@@ -55,8 +52,12 @@[m
+     "RunOnceActivity.ShowReadmeOnStart": "true",[m
+     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",[m
+     "RunOnceActivity.typescript.service.memoryLimit.init": "true",[m
+[31m-    "git-widget-placeholder": "main",[m
+[32m+[m[32m    "git-widget-placeholder": "emma",[m
+     "kotlin-language-version-configured": "true",[m
+[32m+[m[32m    "node.js.detected.package.eslint": "true",[m
+[32m+[m[32m    "node.js.detected.package.tslint": "true",[m
+[32m+[m[32m    "node.js.selected.package.eslint": "(autodetect)",[m
+[32m+[m[32m    "node.js.selected.package.tslint": "(autodetect)",[m
+     "onboarding.tips.debug.path": "/Users/tim/Documents/Development/IntelliJ/projects/spacegame/src/main/java/org/example/Main.java",[m
+     "project.structure.last.edited": "Modules",[m
+     "project.structure.proportion": "0.15",[m

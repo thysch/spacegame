@@ -22,4 +22,10 @@ public class QuitCommand implements GameCommand
     {
         controller.requestQuit();
     }
+
+    @Override
+    public void undo()
+    {
+        System.out.println("Cannot undo quit!");
+    }
 }

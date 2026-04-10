@@ -24,6 +24,11 @@ public class TakeCommand implements GameCommand
     {
         boolean success = model.takeItem( itemName );
         // System.out.println( "[DEBUG] model.takeItem() returned " + success);
+    }
 
+    @Override
+    public void undo()
+    {
+        System.out.println("Cannot undo take!");
     }
 }

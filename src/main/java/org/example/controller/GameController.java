@@ -46,9 +46,15 @@ public class GameController
     //-----------------------------------------------------------------------------
     public boolean processCommand( String rawInput )
     {
+        if (rawInput.equals("undo") || rawInput.equals("u"))
+        {
+            invoker.undoLast();
+            return quitProgram;
+        }
         GameCommand command = parseToCommand( rawInput );
         // System.out.println(command);
-        
+
+
         if ( command != null )
         {
             invoker.invoke( command );
