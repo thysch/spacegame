@@ -7,10 +7,13 @@ package org.example.model;
 
 import java.io.InputStream;
 import java.util.HashMap;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 import org.yaml.snakeyaml.Yaml;
+import org.example.enemy.EnemyObserver;
 import org.example.model.Player;
 
 public class GameModel
@@ -18,6 +21,7 @@ public class GameModel
     private final Player player;
     private final Map<String, Room> rooms = new HashMap<>();
     private final org.example.view.GameView view;
+    private final List<EnemyObserver> observers = new ArrayList<>();
     private boolean victory = false;
 
     public GameModel(org.example.view.GameView view)
@@ -41,6 +45,7 @@ public class GameModel
 
         String next = room.exits.get(direction);
         player.setCurrentRoom(next);
+        notifyObservers(next);
         Room newRoom = rooms.get(player.getCurrentRoom()); //
         System.out.println("DEBUG: Player is now in room: " + player.getCurrentRoom());
 
@@ -184,6 +189,25 @@ public class GameModel
         catch ( Exception e )
         {
             throw new RuntimeException( "Failed to load rooms.yaml" , e );
+        }
+    }
+
+    //-----------------------------------------------------------------------------
+    // Purpose: Register an enemy observer
+    //-----------------------------------------------------------------------------
+    public void addObserver(EnemyObserver observer)
+    {
+        observers.add(observer);
+    }
+
+    //-----------------------------------------------------------------------------
+    // Purpose: Notify all observers of player movement
+    //-----------------------------------------------------------------------------
+    private void notifyObservers(String newRoomId)
+    {
+        for (EnemyObserver observer : observers)
+        {
+            observer.onPlayerMoved(newRoomId);
         }
     }
 

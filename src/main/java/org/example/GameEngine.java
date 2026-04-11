@@ -12,6 +12,9 @@ import org.example.controller.CommandInvoker;
 import org.example.controller.GameController;
 import org.example.model.GameModel;
 import org.example.view.GameView;
+import org.example.enemy.ChaseEnemy;
+import org.example.enemy.PatrolEnemy;
+import java.util.List;
 
 public enum GameEngine
 {
@@ -28,6 +31,11 @@ public enum GameEngine
         this.model = new GameModel(view);
         this.controller = new GameController( model, view );
         this.invoker = new CommandInvoker();
+
+        // Enemies Spawning in...
+        model.addObserver(new ChaseEnemy("Final boss", "Room 9"));
+        model.addObserver(new PatrolEnemy("Flying insect creature",
+                List.of("Room 6", "Room 7", "Room 8")));
     }
 
 
