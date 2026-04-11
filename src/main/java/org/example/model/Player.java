@@ -29,9 +29,7 @@ public class Player {
         return inventory;
     }
     
-    public void addItem(String item) {
-        
-    }
+    public void addItem(String item) {inventory.add(item); }
     
     public boolean hasItem(String item) {
         return inventory.contains(item);

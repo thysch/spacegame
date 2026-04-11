@@ -6,11 +6,7 @@
 //=======================================================================================
 package org.example.controller;
 
-import org.example.commands.GameCommand;
-import org.example.commands.MoveCommand;
-import org.example.commands.QuitCommand;
-import org.example.commands.TakeCommand;
-import org.example.commands.LookCommand;
+import org.example.commands.*;
 //import org.example.commands.MoveCommand;
 import org.example.model.GameModel;
 import org.example.view.GameView;
@@ -69,7 +65,7 @@ public class GameController
         }
         else
         {
-            view.showMessage( " I don't understand that." );
+            invoker.invoke(new UnknownCommand( view, rawInput ));
         }
         return quitProgram;
     }

@@ -105,9 +105,9 @@ public class GameModel
         Set<String> inv = player.getInventory();
         sb.append("Inventory: ").append(inv.isEmpty() ? "empty" : String.join(", ", inv));
 
-
         return sb.toString();
     }
+
 
     //-----------------------------------------------------------------------------
     // Purpose: Lists exits, items, inventory in current room
