@@ -7,6 +7,7 @@ package org.example;
 //package org.example.commands;
 
 import org.example.commands.GameCommand;
+import org.example.commands.HelpCommand;
 import org.example.controller.CommandInvoker;
 import org.example.controller.GameController;
 import org.example.model.GameModel;
@@ -55,7 +56,7 @@ public enum GameEngine
 
             if (input1.equals("help") || input1.equals("h"))
             {
-                view.showHelp();
+                new HelpCommand(view).execute();
             }
             else if (!input1.equals("start"))
             {
