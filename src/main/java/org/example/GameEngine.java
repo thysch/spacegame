@@ -17,15 +17,15 @@ public enum GameEngine
 {
     INSTANCE;
 
-    private final GameModel model;
     private final GameView view;
+    private final GameModel model;
     private final GameController controller;
     private final CommandInvoker invoker;
 
     GameEngine()
     {
-        this.model = new GameModel();
         this.view = new GameView();
+        this.model = new GameModel(view);
         this.controller = new GameController( model, view );
         this.invoker = new CommandInvoker();
     }

@@ -17,10 +17,12 @@ public class GameModel
 {
     private final Player player;
     private final Map<String, Room> rooms = new HashMap<>();
+    private final org.example.view.GameView view;
     private boolean victory = false;
 
-    public GameModel()
+    public GameModel(org.example.view.GameView view)
     {
+        this.view = view;
         this.player = new Player("Room 1");
         loadFromYaml();
         //System.out.println( "loaded yaml" );
@@ -87,7 +89,19 @@ public class GameModel
         StringBuilder sb = new StringBuilder();
         sb.append( r.description ).append( "\n" );
         sb.append( "Exits: " ).append( String.join(", ", r.exits.keySet() ) ).append( "\n" );
-        sb.append( "Items: ").append( r.getItemsDescription() ).append( "\n" );
+
+        if (r.items.isEmpty())
+        {
+            sb.append("Items: There are no items here.\n");
+        }
+        else
+        {
+            String coloredItems = r.items.keySet().stream()
+                    .map(view::colorItem)
+                    .collect(java.util.stream.Collectors.joining(", "));
+            sb.append("Items: ").append(coloredItems).append(".\n");
+        }
+
         Set<String> inv = player.getInventory();
         sb.append("Inventory: ").append(inv.isEmpty() ? "empty" : String.join(", ", inv));
 
