@@ -20,6 +20,23 @@ public class GameView
     }
 
     //-----------------------------------------------------------------------------
+    // Purpose: Display available commands if the player types "help" || "h"
+    //-----------------------------------------------------------------------------
+    public void showHelp()
+    {
+        System.out.println( "\nAvailable commands:" );
+        System.out.println( "  north/south/east/west           - move in a direction" );
+        System.out.println( "  go/move/walk <direction>        - move in a direction" );
+        System.out.println( "  get/take/grab <item>            - pick up an item" );
+        System.out.println( "  look (l)                        - look around" );
+        System.out.println( "  undo (u)                        - undo last move (max 3)" );
+        System.out.println( "  help (h)                        - show this help" );
+        System.out.println( "  quit/exit (q)                   - quit the game" );
+        System.out.println( "-".repeat( 50 ) );
+    }
+
+
+    //-----------------------------------------------------------------------------
     // Purpose: Just prints "> "
     //-----------------------------------------------------------------------------
     public void showPrompt()

@@ -51,6 +51,12 @@ public class GameController
             invoker.undoLast();
             return quitProgram;
         }
+
+        if (rawInput.equals("help") || rawInput.equals("h"))
+        {
+            view.showHelp();
+            return quitProgram;
+        }
         GameCommand command = parseToCommand( rawInput );
         // System.out.println(command);
 

@@ -4,7 +4,9 @@
 //
 //=======================================================================================
 package org.example;
+//package org.example.commands;
 
+import org.example.commands.GameCommand;
 import org.example.controller.CommandInvoker;
 import org.example.controller.GameController;
 import org.example.model.GameModel;
@@ -42,6 +44,26 @@ public enum GameEngine
     public void run()
     {
         view.showWelcome();
+//        view.showHelp();
+        view.showMessage("Would you like instructions? (Please type 'help' or 'h' now or anytime during the game) or type 'start' to begin");
+
+        String input1;
+        do
+        {
+            view.showPrompt();
+            input1 = controller.readCommand();
+
+            if (input1.equals("help") || input1.equals("h"))
+            {
+                view.showHelp();
+            }
+            else if (!input1.equals("start"))
+            {
+                view.showMessage("Please type 'help', 'h', or 'start' to begin the game");
+            }
+        }
+        while (!input1.equals("start"));
+
         while ( !model.isGameOver() )
         {
             view.render( model.getCurrentRoomDescription() );
