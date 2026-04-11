@@ -10,6 +10,8 @@ import org.example.commands.GameCommand;
 import org.example.commands.MoveCommand;
 import org.example.commands.QuitCommand;
 import org.example.commands.TakeCommand;
+import org.example.commands.LookCommand;
+//import org.example.commands.MoveCommand;
 import org.example.model.GameModel;
 import org.example.view.GameView;
 
@@ -115,11 +117,7 @@ public class GameController
         return switch ( first )
         {
             case "quit", "exit", "q" -> new QuitCommand( this );
-            case "look", "l" ->
-            {
-                view.render( model.getCurrentRoomDescription() );
-                yield null;
-            }
+            case "look", "l" -> new LookCommand( model, view );
             default -> null;
         };
     }

@@ -104,6 +104,29 @@ public class GameModel
         return player.getCurrentRoom();
     }
 
+    //-----------------------------------------------------------------------------
+    // Purpose: Returns a description of all neighboring rooms via exits
+    //-----------------------------------------------------------------------------
+    public String getNeighborDescriptions()
+    {
+        Room current = rooms.get( player.getCurrentRoom() );
+        if ( current == null || current.exits.isEmpty() )
+        {
+            return "There are no visible exits.";
+        }
+
+
+        StringBuilder sb = new StringBuilder("You can see:\n");
+        for (var entry : current.exits.entrySet())
+        {
+            String direction = entry.getKey();
+            Room neighbor = rooms.get(entry.getValue());
+            String neighborDescription = (neighbor != null) ? neighbor.description : "You can't see as far as the naked eye";
+            sb.append(" ").append(direction).append(": ").append(neighborDescription).append("\n");
+        }
+        return sb.toString();
+    }
+
     public void setCurrentRoom(String roomId)
     {
         player.setCurrentRoom(roomId);
